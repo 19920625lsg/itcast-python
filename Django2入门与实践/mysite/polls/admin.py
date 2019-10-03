@@ -4,7 +4,7 @@ from .models import Question, Choice
 
 # Register your models here.
 
-class ChoiceInline(admin.StackedInline):
+class ChoiceInline(admin.TabularInline):
     """
     外键关联的类在界面上放到一起
     """
