@@ -2,6 +2,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
+from django.views import generic
 
 from .models import Question, Choice
 
@@ -41,3 +42,29 @@ def vote(request, question_id):
         selected_choice.save()
         # 为了防止用户在提交数据结束后，单击浏览器后退按钮重新提交数据，必须使用HttpResponseRedirect方法进行页面跳转
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+
+"""
+下面三个是用通用模板(generic view Systems)来替换函数模板
+"""
+
+
+class IndexView(generic.ListView):
+    template_name = 'polls/index.html'
+    context_object_name = 'latest_question_list'
+
+    def get_queryset(self):
+        """
+        返回最近发布的5个调查问卷
+        """
+        return Question.objects.order_by('-pub_date')[:5]
+
+
+class DetailView(generic.DetailView):
+    model = Question
+    template_name = 'polls/detail.html'
+
+
+class ResultsView(generic.DetailView):
+    model = Question
+    template_name = 'polls/results.html'
