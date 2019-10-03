@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+{#/Users/liangshanguang/anaconda/lib/python3.6/site-packages/django/contrib/admin/templates/admin/base_site.html#}
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">问卷调查系统</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
