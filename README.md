@@ -1,2 +1,3 @@
-# itcast-python
-传智博客Python课程2018版学习
+# python-ai
+
+> Python基础和AI的学习
