@@ -50,3 +50,10 @@
 + Caffe和Caffe2已经纳入了PyTorch
 
 ![各个库的社区网站质量](https://img1.sycdn.imooc.com/szimg/5de647580001694719201080.jpg)
+
+### TensorFlow优势：集大成者
+
++ Google力捧，数据流图，Github王者，社群广大，文档详尽
++ 功能强大的可视化组件TensorBoard和模拟环境Playground
++ 移动端(IOS和Android)、云端、服务器端、分布式、各种硬件
+
